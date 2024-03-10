@@ -32,7 +32,7 @@ This Docker image provides a minimal setup for running an SQLite3 database serve
 
 ### Download from GitHub Container Registry
 
-Pull the Docker image from the GitHub Container Registry:
+1. Pull the Docker image from the GitHub Container Registry:
 
     ```bash
     docker pull ghcr.io/suriya-mca/sqlite3:latest
@@ -40,7 +40,7 @@ Pull the Docker image from the GitHub Container Registry:
 
 ### Run the Docker Container
 
-Run the Docker container:
+2. Run the Docker container:
 
     ```bash
     docker run -it -p 8191:8191 -v /path/on/host:/app ghcr.io/suriya-mca/sqlite3
