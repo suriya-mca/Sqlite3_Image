@@ -10,3 +10,5 @@ WORKDIR /app
 
 # Expose the port used by your application (if applicable)
 EXPOSE 8191
+
+ENTRYPOINT ["sh", "/entrypoint.sh"]
