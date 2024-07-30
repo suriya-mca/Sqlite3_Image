@@ -30,6 +30,24 @@ This Docker image provides a minimal setup for running an SQLite3 database serve
 
 ## How to Use
 
+### Download from Docker Hub Container Registry
+
+1. Pull the Docker image from the GitHub Container Registry:
+
+    ```bash
+    docker pull suriya08/sqlite3:latest
+    ```
+
+### Run the Docker Container
+
+2. Run the Docker container:
+
+    ```bash
+    docker run -it -p 8191:8191 -v /path/on/host:/app suriya08/sqlite3
+    ```
+
+   Replace `/path/on/host` with the path on your host machine where the SQLite database file is located.
+
 ### Download from GitHub Container Registry
 
 1. Pull the Docker image from the GitHub Container Registry:
