@@ -1,0 +1,15 @@
+name: Docker Image CI for ghcr
+
+on:
+  push
+
+jobs:
+  build_and_publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build and push the image
+        run: |
+          echo "${{ secrets.GH_WFLOW_DI }}" | docker login ghcr.io -u suriya-mca --password-stdin
+          docker build . -t ghcr.io/suriya-mca/sqlite3:latest
+          docker push ghcr.io/suriya-mca/sqlite3:latest
