@@ -93,6 +93,34 @@ This Docker image provides a minimal setup for running an SQLite3 database serve
 
    Replace `/path/on/host` with the path on your host machine where the SQLite database file is located.
 
+### Build from the docker-compose.yml file with "Adminer"
+
+1. docker-compose.yml:
+
+    ```version: '3'
+
+            services:
+            app:
+                image: suriya08/sqlite3:latest
+                container_name: my_app
+                volumes:
+                - ./data:/app/data  # Mount a directory for SQLite databases
+                ports:
+                - "8191:8191"
+
+            adminer:
+                image: adminer
+                container_name: adminer
+                ports:
+                - "8080:8080"
+                volumes:
+                - ./data:/db  # Mount the same directory as above to access SQLite files
+
+            volumes:
+                data:
+
+    ```
+    
 ### Interact with SQLite
 
 #### Python
