@@ -38,8 +38,6 @@ This Docker image provides a minimal setup for running an SQLite3 database serve
     docker pull suriya08/sqlite3:latest
     ```
 
-### Run the Docker Container
-
 2. Run the Docker container:
 
     ```bash
@@ -55,8 +53,6 @@ This Docker image provides a minimal setup for running an SQLite3 database serve
     ```bash
     docker pull ghcr.io/suriya-mca/sqlite3:latest
     ```
-
-### Run the Docker Container
 
 2. Run the Docker container:
 
@@ -83,8 +79,6 @@ This Docker image provides a minimal setup for running an SQLite3 database serve
 
    Replace `my_sqlite_image` with the desired name for your Docker image.
 
-### Run the Docker Container
-
 3. Run the Docker container:
 
     ```bash
@@ -95,11 +89,11 @@ This Docker image provides a minimal setup for running an SQLite3 database serve
 
 ### Build from the docker-compose.yml file with "Adminer"
 
-1. docker-compose.yml:
+1. Create a docker-compose.yml:
 
-    ```version: '3'
-
-            services:
+    ```
+    version: '3'
+        services:
             app:
                 image: suriya08/sqlite3:latest
                 container_name: my_app
@@ -108,19 +102,18 @@ This Docker image provides a minimal setup for running an SQLite3 database serve
                 ports:
                 - "8191:8191"
 
-            adminer:
-                image: adminer
-                container_name: adminer
-                ports:
-                - "8080:8080"
-                volumes:
-                - ./data:/db  # Mount the same directory as above to access SQLite files
-
+        adminer:
+            image: adminer
+            container_name: adminer
+            ports:
+            - "8080:8080"
             volumes:
-                data:
+            - ./data:/db  # Mount the same directory as above to access SQLite files
 
+        volumes:
+            data:
     ```
-    
+
 ### Interact with SQLite
 
 #### Python
