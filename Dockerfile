@@ -3,7 +3,9 @@ FROM alpine:3.19
 
 # Update the package repository and install SQLite
 RUN apk update && \
-    apk add sqlite
+    apk add --no-cache sqlite && \
+    rm -rf /var/lib/apk/lists/* && \
+    rm -rf /var/cache/apk/*
 
 # Set the working directory
 WORKDIR /app
