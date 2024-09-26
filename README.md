@@ -1,4 +1,5 @@
 # SQLite3 Docker Image
+![GitHub License](https://img.shields.io/github/license/suriya-mca/Sqlite3_Image?style=flat&color=green)  ![GitHub Release](https://img.shields.io/github/v/release/suriya-mca/Sqlite3_Image?include_prereleases&style=flat)  ![GitHub commit activity](https://img.shields.io/github/commit-activity/t/suriya-mca/Sqlite3_Image?style=flat&color=orange)  ![GitHub Repo stars](https://img.shields.io/github/stars/suriya-mca/Sqlite3_Image?style=flat&color=yellow)  ![GitHub forks](https://img.shields.io/github/forks/suriya-mca/Sqlite3_Image?style=flat&color=pink)
 
 This Docker image provides a minimal setup for running an SQLite3 database server. It includes the SQLite source code and allows you to interact with the SQLite instance using various tools and applications.
 
