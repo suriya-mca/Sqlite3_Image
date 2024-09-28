@@ -1,6 +1,6 @@
 # Contributing to Sqlite3_Image
 
-Thank you for considering contributing to podman-init! We appreciate your interest in making this project better.
+Thank you for considering contributing to Sqlite3_Image! We appreciate your interest in making this project better.
 
 ## How to Contribute
 We welcome contributions in various forms, including bug reports, feature requests, code improvements, documentation enhancements, and more. Here's how you can contribute:
