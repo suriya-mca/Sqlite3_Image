@@ -13,11 +13,11 @@ jobs:
       - name: Build and push the image to GitHub Container Registry
         run: |
           echo "${{ secrets.GH_WFLOW_DI }}" | docker login ghcr.io -u suriya-mca --password-stdin
-          docker build . -t ghcr.io/suriya-mca/sqlite3:1.0.1
-          docker push ghcr.io/suriya-mca/sqlite3:1.0.1
+          docker build . -t ghcr.io/suriya-mca/sqlite3:1.0.2
+          docker push ghcr.io/suriya-mca/sqlite3:1.0.2
 
       - name: Build and push the image to Docker Hub
         run: |
           echo "${{ secrets.DOCKERHUB_CICD_TOKEN }}" | docker login -u suriya08 --password-stdin
-          docker tag ghcr.io/suriya-mca/sqlite3:1.0.1 suriya08/sqlite3:1.0.1
-          docker push suriya08/sqlite3:1.0.1
+          docker tag ghcr.io/suriya-mca/sqlite3:1.0.2 suriya08/sqlite3:1.0.2
+          docker push suriya08/sqlite3:1.0.2
