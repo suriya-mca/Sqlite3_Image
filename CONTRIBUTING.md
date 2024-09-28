@@ -31,4 +31,4 @@ To start contributing, follow these steps:
 - Submit a pull request from your branch to the dev branch of the original repository.
 
 ## License
-By contributing to podman-init, you agree that your contributions will be licensed under the MIT License.
+By contributing to Sqlite3_Image, you agree that your contributions will be licensed under the MIT License.
