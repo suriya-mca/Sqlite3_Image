@@ -3,10 +3,10 @@ FROM alpine:3.19.4 AS build
 
 # Update the package repository and install build dependencies
 RUN apk update && \
-    apk add --no-cache sqlite
+    apk add --no-cache sqlite-dev
 
 # Final stage: Create the minimal runtime image
-FROM alpine:3.19.4
+FROM scratch
 
 # Copy the necessary binaries and libraries from the build stage
 COPY --from=build /usr/bin/sqlite3 /usr/bin/sqlite3
@@ -18,9 +18,15 @@ WORKDIR /app
 # Expose the port used by your application (if applicable)
 EXPOSE 8191
 
-# Clean up unnecessary files
-RUN rm -rf /var/lib/apk/lists/* && \
-    rm -rf /var/cache/apk/*
+# Create a non-root user
+RUN addgroup -g 1000 sqlite && \
+    adduser -u 1000 -G sqlite -s /bin/sh -D sqlite
+USER sqlite
 
-# Define the entrypoint
+# Set the environment variable for logging
+ENV SQLITE_LOG_LEVEL=2
+
+# Define the entrypoint and health check
+HEALTHCHECK CMD sqlite3 -v || exit 1
 ENTRYPOINT ["sh", "/entrypoint.sh"]
+CMD ["-version"]
