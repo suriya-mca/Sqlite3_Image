@@ -18,11 +18,6 @@ WORKDIR /app
 # Expose the port used by your application (if applicable)
 EXPOSE 8191
 
-# Create a non-root user
-RUN addgroup -g 1000 sqlite && \
-    adduser -u 1000 -G sqlite -s /bin/sh -D sqlite
-USER sqlite
-
 # Set the environment variable for logging
 ENV SQLITE_LOG_LEVEL=2
 
