@@ -36,13 +36,13 @@ This Docker image provides a minimal setup for running an SQLite3 database serve
 1. Pull the Docker image from the GitHub Container Registry:
 
     ```bash
-    docker pull suriya08/sqlite3:1.0.2
+    docker pull suriya08/sqlite3:1.0.3
     ```
 
 2. Run the Docker container:
 
     ```bash
-    docker run -it -p 8191:8191 -v /path/on/host:/app suriya08/sqlite3:1.0.2
+    docker run -it -p 8191:8191 -v /path/on/host:/app suriya08/sqlite3:1.0.3
     ```
 
    Replace `/path/on/host` with the path on your host machine where the SQLite database file is located.
@@ -52,13 +52,13 @@ This Docker image provides a minimal setup for running an SQLite3 database serve
 1. Pull the Docker image from the GitHub Container Registry:
 
     ```bash
-    docker pull ghcr.io/suriya-mca/sqlite3:1.0.2
+    docker pull ghcr.io/suriya-mca/sqlite3:1.0.3
     ```
 
 2. Run the Docker container:
 
     ```bash
-    docker run -it -p 8191:8191 -v /path/on/host:/app ghcr.io/suriya-mca/sqlite3:1.0.2
+    docker run -it -p 8191:8191 -v /path/on/host:/app ghcr.io/suriya-mca/sqlite3:1.0.3
     ```
 
    Replace `/path/on/host` with the path on your host machine where the SQLite database file is located.
@@ -96,7 +96,7 @@ This Docker image provides a minimal setup for running an SQLite3 database serve
     version: '3'
         services:
             app:
-                image: suriya08/sqlite3:1.0.2
+                image: suriya08/sqlite3:1.0.3
                 container_name: my_app
                 volumes:
                 - ./data:/app/data  # Mount a directory for SQLite databases
