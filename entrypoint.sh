@@ -1,1 +1,0 @@
-echo "Sqlite DB started at port: 8191"
