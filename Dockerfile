@@ -1,5 +1,5 @@
 # Use the Alpine Linux base image
-FROM alpine:3.19
+FROM alpine:3.20
 
 # Update the package repository and install SQLite
 RUN apk update && \
